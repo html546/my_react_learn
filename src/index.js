@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 const reducer = (state = { list: [] }, action = {}) => {
     switch (action.type) {
         case 'ADD_TODO':
+            // 状态深拷贝
             const newState = Object.assign({}, state);
             newState.list.push(action.payload);
             return newState;
