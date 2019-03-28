@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { createStore, combineReducers } from 'redux';
+import TodoListReducer from './reducers/TodoListReducer';
 import * as serviceWorker from './serviceWorker';
 
-const reducer = (state = { list: [] }, action = {}) => {
+/* const reducer = (state = { list: [] }, action = {}) => {
     switch (action.type) {
         case 'ADD_TODO':
             // 状态深拷贝
@@ -16,6 +17,11 @@ const reducer = (state = { list: [] }, action = {}) => {
             return state;
     }
 }
+ */
+
+const reducer = combineReducers({
+    list: TodoListReducer
+})
 
 
 const store = createStore(reducer, { list: [] })
