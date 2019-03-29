@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, NavLink, Switch, Redirect } from 'react-router-dom';
 import Home from './Home';
 import News from './News';
 import Other from './Other';
@@ -18,10 +18,13 @@ class App extends Component {
                             <NavLink activeClassName="active" to="/others">其他</NavLink>
                         </div>
                         <hr />
-                        <Route exact path="/" component={Home} />
-                        <Route path="/news" component={News} />
-                        <Route path="/others" component={Other} />
-                        <Route path="/detail/:tel?(\d{3})" component={Detail} />
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route path="/news" component={News} />
+                            <Route path="/others" component={Other} />
+                            <Route path="/detail/:tel?(\d{3})" component={Detail} />
+                            <Redirect from="/*" to="/" />
+                        </Switch>
                     </div>
                 </Router>
             </div>
