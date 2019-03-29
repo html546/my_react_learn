@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import Home from './Home';
 import News from './News';
 import Other from './Other';
+import './App.css';
 
 class App extends Component {
     render() {
@@ -10,9 +11,11 @@ class App extends Component {
             <div className="App">
                 <Router>
                     <div>
-                        <Link to="/">主页</Link>
-                        <Link to="/news">新闻</Link>
-                        <Link to="/others">其他</Link>
+                        <div className="navbar">
+                            <NavLink exact activeClassName="active" to="/">主页</NavLink>
+                            <NavLink activeClassName="active" to="/news">新闻</NavLink>
+                            <NavLink activeClassName="active" to="/others">其他</NavLink>
+                        </div>
                         <hr />
                         <Route exact path="/" component={Home} />
                         <Route path="/news" component={News} />
