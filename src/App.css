@@ -1,16 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.reactAnim-enter {
+    margin-left: -200px;
+    transform: rotate(0deg);
+    transition-duration: 500ms;
 }
 
-.App {
-    margin: 0 auto;
-    width: 300px;
-    height: auto;
+.reactAnim-enter-active {
+    margin-left: 0px;
+    transform: rotate(360deg);
 }
 
-input,
-textarea {
-    margin-bottom: 10px;
+.reactAnim-leave {
+    transition-duration: 300ms;
+    margin-left: 0;
+    opacity: 1;
+}
+
+.reactAnim-leave-active {
+    margin-left: 600px;
+    opacity: 0;
 }
