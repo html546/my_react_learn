@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
 import Home from './Home';
 import News from './News';
 import Other from './Other';
+import Detail from './Detail';
 import './App.css';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
                         <Route exact path="/" component={Home} />
                         <Route path="/news" component={News} />
                         <Route path="/others" component={Other} />
+                        <Route path="/detail/:tel?(\d{3})" component={Detail} />
                     </div>
                 </Router>
             </div>
