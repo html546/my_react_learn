@@ -1,4 +1,5 @@
 // 引入dispatcher
+import TodoDispatcher from '../dispatcher/TodoDispatcher';
 
 const TodoActions = {
     addTodo: function (data) {
